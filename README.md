@@ -24,6 +24,7 @@ Once activated, install the dependencies:
 
 ```bash
 pip install -r requirements.txt
+pip install https://github.com/mromanello/CitationExtractor/archive/1.7.x.zip
 ```
 
 ## Configuration
