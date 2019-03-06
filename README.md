@@ -44,16 +44,33 @@ In this example project `general.working_dir = ./data`, thus the input files are
 
 ## Running the pipeline
 
-### Pre-processing
+### 1. Pre-processing
 
 ```bash
 python scripts/run_pipeline.py do preproc --config=config/project.ini
 ```
 
-### Named entity recognition
+At this point you should have a tokenized and PoS-tagged file at `data/iob/capra2015_introduction.txt` (if you've kept the default project settings).
+
+Try:
+
+```bash
+cat data/iob/capra2015_introduction.txt
+```
+
+### 2. Named entity recognition
 
 ```bash
 python scripts/run_pipeline.py do ner --config=config/project.ini
+```
+
+At this point you should have a JSON file with entities annotated at `data/json/capra2015_introduction.json` (if you've kept the default project settings).
+
+Try:
+
+```bash
+# requires jq, see https://stedolan.github.io/jq/download/
+cat data/json/capra2015_introduction.json|jq ".entities"
 ```
 
 ### TBD
