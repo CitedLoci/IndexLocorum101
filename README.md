@@ -39,19 +39,19 @@ This template project comes with an example document, the introduction of Andrea
 
 The documents to be processed need to be placed in the sub-folder `orig` within your working directory.
 
-In this example project `general.working_dir = ./data`, thus the input files are placed in `./data/orig/`. When you are the script further subfolders are created to store temporary or intermediate files.
+In this example project `general.working_dir = ./data`, thus the input files are placed in `./data/orig/`. The script will then create further subfolders to store temporary or intermediate files.
 
 ## Running the pipeline
 
 ### Pre-processing
 
-```python
+```bash
 python scripts/run_pipeline.py do preproc --config=config/project.ini
 ```
 
 ### Named entity recognition
 
-```python
+```bash
 python scripts/run_pipeline.py do ner --config=config/project.ini
 ```
 
