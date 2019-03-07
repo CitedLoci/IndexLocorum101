@@ -22,21 +22,14 @@ import codecs
 import importlib
 import logging
 import os
-import re
 import shutil
 import sys
 
-import numpy as np
 from docopt import docopt
-from knowledge_base import KnowledgeBase
 
-from citation_extractor.io.converters import DocumentConverter
-from citation_extractor.pipeline import (get_extractor, get_taggers,
-                                         preproc_document)
-from citation_extractor.Utils import IO
-from citation_extractor.Utils.IO import init_logger
-from citation_extractor.Utils.strmatching import StringUtils
 from citation_extractor.core import citation_extractor
+from citation_extractor.pipeline import do_ner, get_extractor, get_taggers
+from citation_extractor.Utils.IO import init_logger
 
 try:
     import configparser
@@ -45,7 +38,6 @@ except ImportError:
 
 
 global logger
-
 
 
 # TODO: move to the codebase
@@ -73,65 +65,6 @@ def initialize(configuration):
     matcher, etc.) + initialize the working directory with subfolders.
     """
     pass
-
-
-def do_ner(doc_id, inp_dir, interm_dir, out_dir, extractor):
-
-    try:
-        data = IO.file_to_instances(os.path.join(inp_dir,doc_id))
-        # store pos tags in a separate list of lists
-        postags = [
-            [
-                ("z_POS",token[1])
-                for token in instance
-            ]
-            for instance in data
-            if len(instance) > 0
-        ]
-
-        # store tokens in a separate list of lists
-        instances = [
-            [
-                token[0]
-                for token in instance
-            ]
-            for instance in data
-            if len(instance) > 0
-        ]
-
-        # extract entities from the input document
-        result = extractor.extract(instances, postags)
-        output = [
-            [
-                (
-                    res[n]["token"].decode('utf-8'),
-                    postags[i][n][1],
-                    res[n]["label"]
-                )
-                for n, d_res in enumerate(res)
-            ]
-            for i,res in enumerate(result)
-        ]
-
-
-        # first write the IOB
-        out_fname = os.path.join(interm_dir,doc_id)
-        IO.write_iob_file(output,out_fname)
-        logger.info('Output successfully written to file'.format({out_fname}))
-
-        # then convert to JSON
-        dc = DocumentConverter()
-        dc.load(iob_file_path=os.path.join(interm_dir, doc_id))
-        dc.to_json(output_dir=out_dir)
-        return (doc_id,True)
-    except Exception, e:
-        logger.error(
-            'The NER of document {} failed with error {}'.format(doc_id, e)
-        )
-        return (doc_id,False)
-    finally:
-        logger.info('Finished processing document {}'.format(doc_id))
-    return
 
 
 def main(args):
