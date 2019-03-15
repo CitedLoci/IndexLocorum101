@@ -46,6 +46,8 @@ In this example project `general.working_dir = ./data`, thus the input files are
 
 ## Running the pipeline
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mromanello/IndexLocorum101/master)
+
 ### 1. Pre-processing
 
 ```bash
