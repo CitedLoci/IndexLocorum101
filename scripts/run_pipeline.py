@@ -28,7 +28,7 @@ import sys
 from docopt import docopt
 
 from citation_extractor.core import citation_extractor
-from citation_extractor.pipeline import do_ner, get_extractor, get_taggers
+from citation_extractor.pipeline import do_ner, get_extractor, get_taggers, preproc_document
 from citation_extractor.Utils.IO import init_logger
 
 try:
