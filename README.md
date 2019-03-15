@@ -36,7 +36,9 @@ Make sure you change the path for the following settings:
 
 ## Data preparation
 
-This template project comes with an example document, the introduction of Andrea Capra's book [*Plato's Four Muses: The Phaedrus and the Poetics of Philosophy*](http://nrs.harvard.edu/urn-3:hul.ebook:CHS_CapraA.Platos_Four_Muses.2014).
+This template project comes with two examples documents (one long and one short):
+1.the introduction of Andrea Capra's book [*Plato's Four Muses: The Phaedrus and the Poetics of Philosophy*](http://nrs.harvard.edu/urn-3:hul.ebook:CHS_CapraA.Platos_Four_Muses.2014);
+2.(Bryn Mawr Classical Review 2013-01-10)[http://bmcr.brynmawr.edu/2013/2013-01-10.html]
 
 The documents to be processed need to be placed in the sub-folder `orig` within your working directory.
 

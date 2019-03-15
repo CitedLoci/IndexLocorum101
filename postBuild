@@ -1,3 +1,6 @@
+# install TreeTagger as it's the main non-python dependency
+# of the CitationExtractor
+
 cd
 mkdir tree-tagger
 cd tree-tagger/
@@ -24,3 +27,8 @@ chmod +x install-tagger.sh
 #chmod 777 -R .
 ./install-tagger.sh
 rm *.gz
+
+# install some Jupyter extensions
+jupyter contrib nbextension install --user
+jupyter nbextension enable toc2/main
+jupyter nbextension enable codefolding/main
