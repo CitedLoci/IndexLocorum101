@@ -1,6 +1,6 @@
 http://www.antlr3.org/download/Python/antlr_python_runtime-3.1.3.tar.gz#egg=antlr-python-runtime
 https://github.com/mromanello/treetagger-python/archive/master.zip#egg=treetagger
-https://github.com/mromanello/CitationExtractor/archive/refs/heads/master.zip
+https://github.com/mromanello/CitationExtractor/archive/468cec7fddbcb510f6ba1f37ae313232a644d76c.zip
 jupyter
 jupyter_contrib_nbextensions
 
