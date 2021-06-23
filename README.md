@@ -1,30 +1,12 @@
 # IndexLocorum101
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mromanello/IndexLocorum101/master)
+
 A template project for those wanting to create an *index locorum* for their publications.
 
 ## Installation
 
-Create a new virtual environment with the package of your choice (e.g. `pyenv`, `conda`, `pipenv` etc.).
-
-**NB**: the Python version currently supported is 2.7.x (but I'm working on Py3 support!).
-
-```bash
-# feel free to pick another name
-pyenv virtualenv 2.7.13 IndexLocorum101
-```
-
-
-Activate the virtual environment that you have just created. In `pyenv` it's:
-
-```bash
-pyenv activate IndexLocorum101
-```
-
-Once activated, install the dependencies:
-
-```bash
-pip install -r requirements.txt
-```
+See [`INSTALL.md`](INSTALL.md).
 
 ## Configuration
 
@@ -43,9 +25,9 @@ In this example project `general.working_dir = ./data`, thus the input files are
 
 ## Running the pipeline
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mromanello/IndexLocorum101/master)
-
 When you install the `CitationExtractor` (version `>= 1.7.0`) the bash command `citedloci-pipeline` will be automatically installed in your system, which allows you to run the pipeline.
+
+For a detailed explanation of each pipeline step, please refer to the Jupyter notebook [`step-by-step.ipynb`](step-by-step.ipynb).
 
 ### 1. Pre-processing
 
