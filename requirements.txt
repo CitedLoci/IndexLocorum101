@@ -3,5 +3,5 @@ https://github.com/mromanello/treetagger-python/archive/master.zip#egg=treetagge
 https://github.com/mromanello/CitationExtractor/archive/refs/heads/master.zip
 jupyter
 jupyter_contrib_nbextensions
-nltk==3.4
+nltk==3.4.5
 
